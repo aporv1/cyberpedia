@@ -1,0 +1,46 @@
+site_name: Cyberpedia
+site_url: https://cyberpedia.com
+site_description: A comprehensive guide to cybersecurity topics
+site_author: Cyberpedia Team
+theme:
+  name: material
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - toc.follow
+nav:
+  - Home: index.md
+  - Generic Resources:
+      - Cheetsheets: GenericResources/Cheetsheets/WindowsCommands.md
+      - Subtopic 1.2: topic1/subtopic1.2.md
+  - Topic 2:
+      - Subtopic 2.1: topic2/subtopic2.1.md
+      - Subtopic 2.2: topic2/subtopic2.2.md
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+plugins:
+  - search
