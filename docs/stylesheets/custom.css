@@ -1,0 +1,27 @@
+/* Force TOC to left column */
+.md-sidebar--secondary {
+    order: -1;  /* Reverse sidebar order */
+    left: 0;
+    margin-right: 1rem;
+}
+
+/* Content area adjustment */
+.md-content {
+    margin-left: 18rem;  /* Match TOC width */
+}
+
+/* TOC styling */
+.md-sidebar__inner {
+    border-right: 1px solid #e1e4e8;
+    padding-right: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 76.1875em) {
+    .md-sidebar--secondary {
+        display: none;
+    }
+    .md-content {
+        margin-left: 0;
+    }
+}

@@ -1,46 +1,55 @@
-site_name: Cyberpedia
-site_url: https://cyberpedia.com
-site_description: A comprehensive guide to cybersecurity topics
-site_author: Cyberpedia Team
-theme:
-  name: material
-  palette:
+site_name: Cyberpedia                        # The name of the site, shown in the header and metadata
+site_url: https://cyberpedia.com             # The base URL of the site, used for canonical URLs and sitemap
+site_description: A comprehensive guide to cybersecurity topics  # Description for SEO and metadata
+site_author: Cyberpedia Team                 # Author information for metadata
+theme:                                      # Theme configuration section
+  name: material                            # Use the 'material' MkDocs theme
+  palette:                                  # Define color palettes for light and dark modes
     # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: green
-      accent: deep purple
+    - scheme: slate                         # Use 'slate' color scheme for dark mode
+      toggle:                               # Toggle button configuration for switching modes
+        icon: material/weather-sunny        # Icon for dark mode toggle
+        name: Dark mode                     # Name shown for dark mode toggle
+      primary: deep orange                  # Primary color for dark mode
+      accent: deep purple                   # Accent color for dark mode
 
     # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    - scheme: default                       # Use 'default' color scheme for light mode
+      toggle:                               # Toggle button configuration for switching modes
+        icon: material/weather-night        # Icon for light mode toggle
+        name: Light mode                    # Name shown for light mode toggle
+      primary: blue                         # Primary color for light mode
+      accent: deep orange  
+  # Removed invalid 'toc' property from theme configuration
+  features:                                 # Enable specific theme features
+    - navigation.tabs                       # Show navigation as tabs
+    - navigation.sections                   # Group navigation into sections
+    - toc.integrate                         # Integrate table of contents into navigation
     - toc.follow
-nav:
-  - Home: index.md
-  - Generic Resources:
-      - Cheetsheets: GenericResources/Cheetsheets/WindowsCommands.md
-      - Subtopic 1.2: topic1/subtopic1.2.md
-  - Topic 2:
-      - Subtopic 2.1: topic2/subtopic2.1.md
-      - Subtopic 2.2: topic2/subtopic2.2.md
-markdown_extensions:
-  - toc:
-      permalink: true
-  - admonition
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tasklist
-  - pymdownx.tilde
-plugins:
-  - search
+    - navigation.instant
+    - content.tabs.link
+    - header.autohide
+  
+nav:                                        # Navigation structure for the site
+  - Home: index.md                          # Home page
+  - Generic Resources:                      # Section: Generic Resources
+      - Cheetsheets: GenericResources/Cheetsheets/WindowsCommands.md  # Link to Windows Commands cheatsheet
+      - Subtopic 1.2: topic1/subtopic1.2.md # Link to subtopic 1.2
+  - Topic 2:                                # Section: Topic 2
+      - Subtopic 2.1: topic2/subtopic2.1.md # Link to subtopic 2.1
+      - Subtopic 2.2: topic2/subtopic2.2.md # Link to subtopic 2.2
+markdown_extensions:                        # List of Markdown extensions to enable
+  - toc:                                    # Table of contents extension
+      permalink: true                       # Add permalinks to headings in TOC
+      toc_depth: 6
+      separator: "-"
+  - admonition                              # Enable admonition blocks (notes, warnings, etc.)
+  - footnotes                               # Enable footnotes
+  - pymdownx.details                        # Enable collapsible details blocks
+  - pymdownx.superfences                    # Enable advanced code block features
+  - pymdownx.tasklist                       # Enable GitHub-style task lists
+  - pymdownx.tilde                          # Enable strikethrough and subscript/superscript
+plugins:                                    # List of MkDocs plugins to use
+  - search                                  # Enable built-in search functionality
+extra_css:                                 # (Commented) Option to add custom CSS files
+    - stylesheets/custom.css  
